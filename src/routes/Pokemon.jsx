@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import pokemonData from "/src/assets/Pokedata.js";
+import pokemonData from "/src/data/Pokedata.js";
 import "./Pokemon.scss";
 import TypeCard from "/src/Components/Card/TypeCard";
 import { IoChevronBackOutline } from "react-icons/io5";

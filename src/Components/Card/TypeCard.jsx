@@ -4,7 +4,7 @@ function TypeCard(props) {
   return (
     <div className={props.type.type.name + " typecard"}>
       <img
-        src={"/src/assets/Icons/" + props.type.type.name + "Icon.svg"}
+        src={"/assets/Icons/" + props.type.type.name + "Icon.svg"}
         alt=""
         height="25px"
         width="25px"

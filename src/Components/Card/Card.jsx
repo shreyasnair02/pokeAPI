@@ -20,13 +20,13 @@ function Card(props) {
           <span className="card__details__name">{props.arr.name}</span>
           <div className="card__details__types">
             {props.arr.pokemon_data.types.map((type, i) => {
-              return <TypeCard type={type} layoutId={i}></TypeCard>;
+              return <TypeCard type={type} layoutId={i} key={i}></TypeCard>;
             })}
           </div>
         </div>
       </div>
       <div className="card__images">
-        <img src="/src/assets/Icons/pokeball.svg" alt="" height={170} />
+        <img src="/assets/Icons/pokeball.svg" alt="" height={170} />
         <img
           className="poke"
           src={

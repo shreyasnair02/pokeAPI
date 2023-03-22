@@ -1,5 +1,5 @@
 import React from "react";
-import pokemonData from "/src/assets/Pokedata.js";
+import pokemonData from "/src/data/Pokedata.js";
 import Card from "./Components/Card/Card";
 import "./index.scss";
 import { FaSearchengin } from "react-icons/fa";
@@ -27,7 +27,7 @@ function App() {
         />
       </div>
       <img
-        src="/src/assets/Icons/pokeball.svg"
+        src="/assets/Icons/pokeball.svg"
         alt=""
         style={{
           position: "fixed",
@@ -40,7 +40,7 @@ function App() {
         }}
       />
 
-      <motion.div  className="wrapper">
+      <motion.div className="wrapper">
         {filterdArr.map((ar, i) => {
           return <Card arr={ar} key={Number(ar.id)} id={i} />;
         })}
