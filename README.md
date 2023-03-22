@@ -1,8 +1,8 @@
 
-# pokeAPI
+# PokeAPI
 React Pokedex made using PokeAPI
 
-#Getting started
+# Getting started
 - Clone the repo
 - install dependancies  
 
