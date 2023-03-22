@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Pokemon";
+  src: url("/src/fonts/SFPRO/SFPRODISPLAYBOLD.OTF");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Pokemon";
+  src: url("/src/fonts/SFPRO/SFPRODISPLAYREGULAR.OTF");
+  font-weight: normal;
+}
+$colors: (
+  light: (
+    text: (
+      fair: hsl(0, 0%, 100%),
+      darker: hsl(0, 0%, 15%),
+      dark: rgba(23, 23, 27, 0.6),
+    ),
+    surface: (
+      fair: hsl(0, 0%, 95%),
+      grass: hsl(119, 29%, 64%),
+      fire: hsl(29, 100%, 67%),
+      water: hsl(208, 90%, 65%),
+      bug: hsl(106, 54%, 65%),
+      normal: hsl(224, 11%, 74%),
+      flying: hsl(221, 63%, 70%),
+      poison: hsl(310, 20%, 53%),
+      ground: hsl(19, 91%, 64%),
+      electric: hsl(45, 86%, 64%),
+      fairy: hsl(336, 63%, 79%),
+      fighting: hsl(345, 80%, 60%),
+      psychic: hsl(359, 100%, 70%),
+      rock: hsl(43, 43%, 71%),
+      ghost: #8470bd,
+    ),
+    type: (
+      grass: #62b957,
+      poison: #a552cc,
+      fire: #fd7d24,
+      flying: #748fc9,
+      water: #4a90da,
+      bug: #8cb230,
+      normal: #9b9b9b,
+      ground: #dd7748,
+      electric: #eed535,
+      fairy: #ed6ec7,
+      fighting: #d04164,
+      psychic: #ea5d60,
+      rock: #baab82,
+      ghost: #556aae,
+    ),
+  ),
+);
+@mixin color-scheme($type: light) {
+  @each $prop, $value in map-get($colors, $type) {
+    @each $num, $val in $value {
+      --#{$prop}-#{$num}: #{$val};
+    }
+  }
+}
+
+@each $type, $color in map-get(map-get($colors, light), surface) {
+  /* Code to use $type and $color goes here */
+  .card__#{$type} {
+    background-color: var(--surface-#{$type});
+  }
+}
+@each $type, $color in map-get(map-get($colors, light), type) {
+  /* Code to use $type and $color goes here */
+  .#{$type} {
+    background-color: var(--type-#{$type});
+  }
+}
+
+:root {
+  @include color-scheme(light);
+  font-family: Pokemon, "Courier New", Courier, monospace;
+}
+span {
+  display: block;
+}
